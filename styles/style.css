@@ -1,5 +1,15 @@
 /* Global Styles */
 :root {
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --card-bg: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #64ffda;
+    --hover-color: #00e5b9;
+    --border-color: #333333;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.3);
     --primary-color: #2ecc71;
     --secondary-color: #3498db;
     --dark-color: #2c3e50;
@@ -18,10 +28,11 @@ html {
 }
 
 body {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: var(--light-color);
 }
 
 /* Loading Bar */
@@ -31,7 +42,7 @@ body {
     left: 0;
     width: 0%;
     height: 3px;
-    background: var(--primary-color);
+    background-color: var(--accent-color);
     z-index: 1000;
     transition: width 0.5s ease;
 }
@@ -45,10 +56,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 .logo {
@@ -71,13 +82,13 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .burger {
@@ -88,7 +99,7 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: var(--dark-color);
+    background-color: var(--text-primary);
     margin: 5px;
     transition: var(--transition);
 }
@@ -102,6 +113,7 @@ nav {
     position: relative;
     overflow: hidden;
     padding: 0 5%;
+    background-color: var(--primary-bg);
 }
 
 .webgl {
@@ -124,7 +136,7 @@ nav {
 
 .hero-content {
     text-align: left;
-    color: var(--light-color);
+    color: var(--text-primary);
 }
 
 .greeting {
@@ -141,7 +153,7 @@ nav {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease 0.2s;
-    color: var(--light-color);
+    color: var(--text-primary);
     background: linear-gradient(45deg, var(--dark-color), var(--primary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -187,6 +199,7 @@ nav {
     opacity: 0;
     animation-fill-mode: forwards;
     line-height: 1.6;
+    color: var(--text-secondary);
 }
 
 .hero-buttons {
@@ -200,34 +213,35 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
     text-decoration: none;
     border-radius: 30px;
     transition: var(--transition);
     font-weight: 500;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--accent-color);
 }
 
 .cta-button:hover {
+    background-color: var(--hover-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .secondary-button {
     display: inline-block;
     padding: 1rem 2rem;
-    color: var(--light-color);
+    color: var(--accent-color);
     text-decoration: none;
     border-radius: 30px;
     transition: var(--transition);
     font-weight: 500;
-    border: 2px solid var(--light-color);
+    border: 2px solid var(--accent-color);
 }
 
 .secondary-button:hover {
-    background: var(--light-color);
-    color: var(--dark-color);
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
     transform: translateY(-3px);
 }
 
@@ -267,13 +281,14 @@ nav {
 /* Sections */
 section {
     padding: 5rem 10%;
+    background-color: var(--primary-bg);
 }
 
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
-    color: var(--dark-color);
+    color: var(--text-primary);
 }
 
 /* About Section */
@@ -297,12 +312,12 @@ section h2 {
 }
 
 .highlight {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .lead {
     font-size: 1.2rem;
-    color: var(--dark-color);
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
@@ -316,10 +331,11 @@ section h2 {
 .detail-item {
     text-align: center;
     padding: 1.5rem;
-    background: white;
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .detail-item:hover {
@@ -351,6 +367,7 @@ section h2 {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
     text-align: center;
+    color: var(--text-primary);
 }
 
 /* Skills Section */
@@ -366,15 +383,16 @@ section h2 {
 .skills-category h3 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--dark-color);
+    color: var(--text-primary);
 }
 
 .skill-item {
-    background: white;
+    background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
 }
 
 .skill-item i {
@@ -414,7 +432,7 @@ section h2 {
 .contact-info h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--text-primary);
 }
 
 .contact-details {
@@ -445,29 +463,30 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--light-color);
+    background-color: var(--card-bg);
     border-radius: 50%;
-    color: var(--dark-color);
+    color: var(--text-primary);
     transition: var(--transition);
 }
 
 .social-link:hover {
-    background: var(--primary-color);
-    color: white;
+    color: var(--accent-color);
+    background-color: var(--secondary-bg);
 }
 
 .contact-form {
-    background: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
 }
 
 .submit-btn {
     width: 100%;
     padding: 1rem;
-    background: var(--primary-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -475,15 +494,31 @@ section h2 {
 }
 
 .submit-btn:hover {
-    background: var(--secondary-color);
+    background-color: var(--hover-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-form label {
+    color: var(--text-secondary);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background: var(--dark-color);
-    color: var(--light-color);
+    background-color: var(--secondary-bg);
+    color: var(--text-secondary);
 }
 
 /* Animations */
@@ -622,12 +657,13 @@ footer {
 
 /* Project Cards */
 .project-card {
-    background: white;
+    background-color: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
     transition: var(--transition);
     padding: 2rem;
+    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
@@ -657,7 +693,7 @@ footer {
 }
 
 .project-content h3 {
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -676,11 +712,11 @@ footer {
 }
 
 .project-tech span {
-    background: var(--light-color);
+    background-color: var(--secondary-bg);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: var(--dark-color);
+    color: var(--accent-color);
 }
 
 .project-links {
@@ -712,11 +748,12 @@ footer {
 }
 
 .education-card {
-    background: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .education-card:hover {
@@ -725,7 +762,7 @@ footer {
 }
 
 .education-card h3 {
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -737,7 +774,7 @@ footer {
 }
 
 .education-card .duration {
-    color: var(--dark-color);
+    color: var(--text-primary);
     opacity: 0.8;
     margin-bottom: 0.5rem;
 }
@@ -756,12 +793,13 @@ footer {
 }
 
 .certification-card {
-    background: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .certification-card:hover {
@@ -776,13 +814,13 @@ footer {
 }
 
 .certification-card h3 {
-    color: var(--dark-color);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
 .certification-card p {
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -790,9 +828,10 @@ footer {
 .personal-info {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: white;
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
 }
 
 .personal-info p {
@@ -807,4 +846,22 @@ footer {
 
 .personal-info a:hover {
     color: var(--secondary-color);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 } 
