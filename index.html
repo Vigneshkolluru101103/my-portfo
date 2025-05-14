@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignesh Kolluru - Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+    <div class="loading-bar"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">VK</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Animation -->
+    <section id="home" class="hero">
+        <canvas class="webgl"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="greeting">Hello, I'm</span>
+                <h1>Vignesh <span class="highlight">Kolluru</span></h1>
+                <p class="typed-text">Computer Science Engineer</p>
+                <p class="hero-description">A passionate developer specializing in Front End Technologies and Artificial Intelligence</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#contact" class="secondary-button">Let's Connect</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/vignesh.jpeg" alt="Vignesh Kolluru">
+                <div class="hero-image-shape"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="lead">Looking forward to associate myself with an organization where there is an opportunity to share, contribute and upgrade my knowledge for development of skill in any organization served.</p>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Development</h4>
+                        <p>Specializing in Front End Technologies and AI</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI & ML</h4>
+                        <p>Experience in Python, NLP, and AI Applications</p>
+                    </div>
+                </div>
+                <div class="personal-info">
+                    <p><strong>Location:</strong> Tirupati, Andhra Pradesh</p>
+                    <p><strong>Email:</strong> <a href="mailto:vigneshkolluru10@gmail.com">vigneshkolluru10@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vignesh-kollurub3895633" target="_blank">View Profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Bachelor of Technology in Computer Science</h3>
+                <p class="institution">Madanapalle Institute of Technology & Science</p>
+                <p class="duration">2023-2026</p>
+                <p class="score">CGPA: 8.88</p>
+            </div>
+            <div class="education-card">
+                <h3>Diploma (CME)</h3>
+                <p class="institution">Sri Venkateshwara College of Engineering and Technology</p>
+                <p class="duration">2020-2023</p>
+                <p class="score">Percentage: 80%</p>
+            </div>
+            <div class="education-card">
+                <h3>Matriculation (BSEAP)</h3>
+                <p class="institution">Mother Academy EM high school</p>
+                <p class="duration">2019-2020</p>
+                <p class="score">Percentage: 100%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <h4>Python</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h3>Technologies & Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-windows"></i>
+                        <h4>Windows</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI/ML</h4>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-server"></i>
+                        <h4>DBMS</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>We build Construction</h3>
+                    <p class="project-duration">Duration: 4 Months</p>
+                    <p>A construction website that acts as a communication bridge between clients and the company, allowing users to explore services, view completed projects, and directly contact for inquiries or quotes.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Windows</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Chat Bot</h3>
+                    <p class="project-duration">Duration: 3 Months</p>
+                    <p>Developed an intelligent chatbot capable of understanding and responding to user queries using natural language processing (NLP). Integrated with web interface and backend using Python and Flask.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Java Script</span>
+                        <span>PHP</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h2>Certifications</h2>
+        <div class="certifications-grid">
+            <div class="certification-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Generative AI</h3>
+                <p>Google Cloud (2024)</p>
+            </div>
+            <div class="certification-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Cloud Essentials</h3>
+                <p>AWS (2024)</p>
+            </div>
+            <div class="certification-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Data Science with Python</h3>
+                <p>Simple Learning (2023)</p>
+            </div>
+            <div class="certification-card">
+                <i class="fas fa-certificate"></i>
+                <h3>E-Business</h3>
+                <p>NPTEL (12 weeks)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-info-header">
+                        <h3>Let's Talk!</h3>
+                        <div class="animated-bar"></div>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Location</h4>
+                                <p>D.no-4-20, Mittapalem, Chapalapalle, Tirupati, 524134</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <p>+91 6305002566</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p>vigneshkolluru10@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/vignesh-kollurub3895633" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:23695a3212@mits.ac.in" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="contact-form">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Your Email</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="subject" required>
+                            <label for="subject">Subject</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" required></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vignesh Kolluru. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
