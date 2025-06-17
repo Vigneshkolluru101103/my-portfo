@@ -121,9 +121,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Form Submission
 const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-}); 
+contactForm.addEventListener('submit', submitForm);
+
+// Form submission handler
+async function submitForm(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    const submitBtn = form.querySelector('.submit-btn');
+    
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    try {
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            subject: form.subject.value,
+            message: form.message.value
+        };
+
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            formMessage.textContent = 'Message sent successfully!';
+            formMessage.className = 'form-message success';
+            form.reset();
+        } else {
+            throw new Error(data.error || 'Failed to send message');
+        }
+    } catch (error) {
+        formMessage.textContent = error.message;
+        formMessage.className = 'form-message error';
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            formMessage.textContent = '';
+            formMessage.className = 'form-message';
+        }, 5000);
+    }
+    return false;
+} 
